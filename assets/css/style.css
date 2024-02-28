@@ -9,9 +9,14 @@ html {
     font-family: Helvetica, Arial, sans-serif;
 }
 
+.clear {
+    clear: both;
+}
+
 #main {
 
 }
+
 #header {
     height: 46px;
     background-color: #000;
@@ -105,7 +110,7 @@ html {
 
 #slider .text-content {
     position: absolute;
-    bottom: 47px;
+    bottom: 48px;
     color: #fff;
     width: 100%;
     text-align: center;
@@ -152,6 +157,25 @@ html {
     line-height: 1.4;
 }
 
+#content .member-list {
+    margin-top: 48px;
+}
+
+#content .member-item {
+    float: left;
+    width: calc(100%/3);
+    text-align: center;
+}
+
+#content .member-name {
+    font-size: 15px;
+}
+
+#content .member-img {
+    margin-top: 15px;
+    width: 154px;
+    border-radius: 4px;
+}
 
 #footer {
 
