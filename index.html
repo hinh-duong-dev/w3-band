@@ -127,15 +127,15 @@
                         <form action="">
                             <div class="row">
                                 <div class="col col-half">
-                                    <input type="text" name="" placeholder="Name" required id="" class="form-control">
+                                    <input type="text" name="" placeholder="Name" required id="contact-name" class="form-control">
                                 </div>
                                 <div class="col col-half">
-                                    <input type="email" name="" placeholder="Email" required id="" class="form-control">
+                                    <input type="email" name="" placeholder="Email" required id="contact-email" class="form-control">
                                 </div>
                             </div>
                             <div class="row mt-8">
                                 <div class="col col-full">
-                                    <input type="text" name="" placeholder="Message" required id="" class="form-control">
+                                    <input type="text" name="" placeholder="Message" required id="contact-me" class="form-control">
                                 </div>
                             </div>
                             <input class="btn pull-right mt-16" type="submit" value="SEND">
@@ -160,6 +160,37 @@
                 <a href=""><i class="ti-linkedin"></i></a>
             </div>
             <p class="copyright">Powered by <a href="#">w3.css</a></p>
+        </div>
+    </div>
+
+    <div class="modal">
+        <div class="modal-container">
+            <div class="modal-close">
+                <i class="ti-close"></i>
+            </div>
+            <header class="modal-header">
+                <i class="ti-bag modal-heading-icon"></i>
+                Tickets
+            </header>
+            <div class="modal-body">
+                <label for="ticket-quantity" class="modal-label">
+                    <i class="ti-shopping-cart"></i>
+                    Tickets, $15 per person
+                </label>
+                <input id="ticket-quantity" type="text" class="modal-input" placeholder="How many?">
+
+                <label for="ticket-email" class="modal-label">
+                    <i class="ti-user"></i>
+                    Send to
+                </label>
+                <input id="ticket-email" type="text" class="modal-input" placeholder="Enter email">
+                <button id="buy-ticket">
+                    Pay <i class="ti-check"></i>
+                </button>
+            </div>
+            <footer class="modal-footer">
+                <p class="modal-help">Need <a href="#">help?</a></p>
+            </footer>
         </div>
     </div>
 </body>
