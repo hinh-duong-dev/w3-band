@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The band</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="stylesheet" href="./assets/font/themify-icons/themify-icons.css">
 </head>
 <body>
@@ -17,24 +18,27 @@
                 <li><a href="#tour">Tour</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li>
-                    <a href="">
+                    <a href="#">
                         More
                         <i class="nav-arrow-down ti-angle-down"></i>
                     </a>
                     <ul class="subnav">
-                        <li><a href="">Merchandise</a></li>
-                        <li><a href="">Extras</a></li>
-                        <li><a href="">Media</a></li>
+                        <li><a href="#">Merchandise</a></li>
+                        <li><a href="#">Extras</a></li>
+                        <li><a href="#">Media</a></li>
                     </ul>
                 </li>
             </ul>
             <!-- End: Nav -->
 
-            <!-- Begin: Search -->
+            <!-- Mobile menu button -->
+            <div id="mobile-menu" class="mobile-menu-btn">
+                <i class="menu-icon ti-menu"></i>
+            </div>
+
             <div class="search-btn">
                 <i class="search-icon ti-search"></i>
             </div>
-            <!-- End: Search -->
         </div>
 
         <div id="slider">
@@ -219,6 +223,36 @@
             event.stopPropagation();
         });
 
+        var header = document.getElementById('header');
+        var mobileMenu = document.getElementById('mobile-menu');
+        var headerHeight = header.clientHeight;
+
+        // Open, close menu
+        mobileMenu.onclick = function() {
+            var isClosed = header.clientHeight === headerHeight;
+            if (isClosed) {
+                header.style.height = 'auto';
+            }
+            else {
+                header.style.height = null;
+            }
+        }
+
+        // Auto close menu when choose menu item
+        menuItems = document.querySelectorAll('#nav li a[href*="#"]');
+        for (var i = 0; i < menuItems.length; i++) {
+            var menuItem = menuItems[i];
+
+            menuItem.onclick = function(event) {
+                var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
+                if (isParentMenu) {
+                    event.preventDefault();
+                }
+                else {
+                    header.style.height = null;
+                }
+            }
+        }
     </script>
 </body>
 </html>
